@@ -1,0 +1,12 @@
+CREATE OR REPLACE PROCEDURE UpdateEmployeeBonus(
+    dept_name IN VARCHAR2,
+    bonus_percentage IN FLOAT
+)
+IS
+BEGIN
+    
+    UPDATE EMPLOYEES
+    SET SALARY=SALARY+(SALARY*bonus_percentage) 
+    WHERE DEPARTMENT=dept_name;   
+    DBMS_OUTPUT.PUT_LINE('BONUS ADDED TO ROWS '||SQL%ROWCOUNT); 
+END;
