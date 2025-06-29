@@ -1,0 +1,21 @@
+DECLARE 
+IS_VIP BOOLEAN:=FALSE;
+vip_status VARCHAR2(20);
+BEGIN
+    --CHECKING FOR ANOTHER TEST CASE WHERE BALANCE IS GREATER THAN 100000 BY UPDTING BALANCE OF ONE RECORD TO 15780
+    /*UPDATE ACCOUNTS
+    SET BALANCE =15780
+    WHERE CUSTOMERID=3;*/
+    FOR i IN (SELECT * FROM ACCOUNTS) LOOP
+    IS_VIP:=FALSE;
+        IF i.BALANCE>10000 THEN
+            IS_VIP:=TRUE;
+            vip_status:='YES';            
+        ELSE
+            vip_status:='NO';
+        END IF;
+        DBMS_OUTPUT.PUT_LINE(' NAME ' || i.CUSTOMERID || ' BALANCE '|| i.BALANCE || ' STATUS (VIP) : ' || vip_status);
+    END LOOP;
+    COMMIT;
+
+END;
