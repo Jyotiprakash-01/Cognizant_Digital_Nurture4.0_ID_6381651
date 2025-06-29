@@ -1,0 +1,16 @@
+DECLARE
+remainder_mssg VARCHAR2(100);
+days NUMBER;
+BEGIN
+    --Creating a testcase
+    /*UPDATE LOANS
+    SET ENDDATE=TO_DATE('15/07/25') WHERE CUSTOMERID=3;*/
+    FOR i IN(SELECT * FROM LOANS) LOOP
+        days:=TRUNC(i.ENDDATE-SYSDATE);
+        DBMS_OUTPUT.PUT_LINE('DAYS LEFT TILL PAY OFF' || DAYS);
+        IF days<30 THEN
+            DBMS_OUTPUT.PUT_LINE('REMAINDER : YOU ONLY HAVE ' || days ||' TO COMPLETELY PAY OFF YOUR LOAN');
+        END IF;
+    END LOOP;
+   
+END;
