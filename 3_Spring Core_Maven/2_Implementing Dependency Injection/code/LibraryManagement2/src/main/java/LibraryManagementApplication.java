@@ -6,10 +6,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.library.service.BookService;
 
-public class Main {
+public class LibraryManagementApplication {
 	public static void main(String[] args) {
 
-		
+		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		BookService service = (BookService) context.getBean("bookService");
