@@ -1,4 +1,11 @@
-3_Spring Core_Maven/2_Implementing Dependency Injection/code/LibraryManagement/.settings
-3_Spring Core_Maven/2_Implementing Dependency Injection/code/LibraryManagement/target
-3_Spring Core_Maven/2_Implementing Dependency Injection/code/LibraryManagement/.project
-3_Spring Core_Maven/2_Implementing Dependency Injection/code/LibraryManagement/.classpath
+3_Spring Core_Maven/1_Configuring a Basic Spring Application/code/LibraryManagement1/.settings
+3_Spring Core_Maven/1_Configuring a Basic Spring Application/code/LibraryManagement1/target
+3_Spring Core_Maven/1_Configuring a Basic Spring Application/code/LibraryManagement1/.project
+3_Spring Core_Maven/1_Configuring a Basic Spring Application/code/LibraryManagement1/.classpath
+
+3_Spring Core_Maven/2_Implementing Dependency Injection/code/LibraryManagement2/.settings
+3_Spring Core_Maven/2_Implementing Dependency Injection/code/LibraryManagement2/target
+3_Spring Core_Maven/2_Implementing Dependency Injection/code/LibraryManagement2/.project
+3_Spring Core_Maven/2_Implementing Dependency Injection/code/LibraryManagement2/.classpath
+
+LibraryManagement1
