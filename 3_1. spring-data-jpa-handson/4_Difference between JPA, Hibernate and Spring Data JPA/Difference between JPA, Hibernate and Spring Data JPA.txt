@@ -1,0 +1,68 @@
+
+Java Persistence API (JPA) 
+• JPA is a specification (JSR 338) for managing relational data using Java objects. 
+• It defines standard interfaces and annotations to perform ORM (Object-Relational 
+Mapping). 
+• JPA does not provide an implementation—it’s just a set of guidelines. 
+• Common implementations of JPA: 
+    o Hibernate 
+    o EclipseLink 
+    o OpenJPA 
+ 
+Hibernate 
+• Hibernate is an Object-Relational Mapping (ORM) tool and implementation of 
+JPA. 
+• It provides a concrete implementation of JPA's specification, along with extra 
+features. 
+• With Hibernate, developers manually manage: 
+    o Session lifecycle 
+    o Transactions 
+    o Queries (using HQL or Criteria API) 
+ 
+Spring Data JPA 
+• Spring Data JPA is not a JPA implementation. 
+• It is a Spring abstraction layer built on top of JPA providers like Hibernate. 
+• Reduces boilerplate by: 
+    o Providing built-in JpaRepository interfaces 
+    o Automatically generating query methods 
+    o Managing transactions with Spring annotations 
+ 
+Code Comparison: Hibernate vs. Spring Data JPA 
+
+Hibernate Code---------------------------------------------------------------------------------------------- 
+Method to CREATE an employee in the database */ 
+public Integer addEmployee(Employee employee){ 
+   Session session = factory.openSession(); 
+   Transaction tx = null; 
+   Integer employeeID = null; 
+ 
+   try { 
+      tx = session.beginTransaction(); 
+      employeeID = (Integer) session.save(employee);  
+      tx.commit(); 
+   } catch (HibernateException e) { 
+      if (tx != null) tx.rollback(); 
+      e.printStackTrace();  
+   } finally { 
+      session.close();  
+   } 
+   return employeeID; 
+} 
+ 
+ 
+Spring Data JPA Code========================================================================================= 
+// EmployeeRepository.java 
+public interface EmployeeRepository extends JpaRepository<Employee, 
+Integer> { 
+} 
+ 
+EmployeeService.java 
+@Autowired 
+private EmployeeRepository employeeRepository; 
+ 
+@Transactional 
+public void addEmployee(Employee employee) { 
+    employeeRepository.save(employee); 
+} 
+ 
+ 
