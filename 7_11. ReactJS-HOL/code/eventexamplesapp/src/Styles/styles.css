@@ -1,0 +1,27 @@
+.heading{
+    color:green;
+}
+.inputDiv{   
+   width:300px;   
+   margin-bottom:5px; 
+}
+label{
+    width:100px;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box; 
+}
+input[type="text"],
+textarea{
+    box-sizing: border-box; 
+    width:200px;
+    vertical-align: middle;
+   
+}
+.class-btn{
+    width:300px;
+    display:flex;
+}
+.submit-btn{
+    margin:auto;
+}
